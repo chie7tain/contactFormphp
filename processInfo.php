@@ -25,15 +25,15 @@ $userObject = [
   'phone'=>$phone,
   'gender'=>$gender
 ];
-$contacts = scandir("contactStorage/");
-$contactsSliced = array_slice($contacts, 2);
-for($counter = 0; $counter < count($contactsSliced); $counter++){
-  $contactFilePath = "contactStorage/".$contactsSliced[$counter];
-  // print_r($contactFilePath);
-  $result = file_get_contents($contactFilePath);
-  $resultArray = explode(" ", $result);
-  print_r($resultArray[$counter]);
-}
+// $contacts = scandir("contactStorage/");
+// $contactsSliced = array_slice($contacts, 2);
+// for($counter = 0; $counter < count($contactsSliced); $counter++){
+//   $contactFilePath = "contactStorage/".$contactsSliced[$counter];
+//   // print_r($contactFilePath);
+//   $result = file_get_contents($contactFilePath);
+//   $resultArray = explode(" ", $result);
+//   print_r($resultArray[$counter]);
+// }
 
 file_put_contents("contactStorage/" .$fname.'.txt',json_encode($userObject));
   $_SESSION['message'] = 'File sucessfully saved with the filename of '.$fname. ' thanks';
@@ -42,9 +42,6 @@ $contacts = scandir("contactStorage/");
 $contactFilePath = "contactStorage/".$fname.'.txt';
 print_r($contactFilePath);
 
-echo file_get_contents($contactFilePath);
-die();
-file_get_contents()
   // if(in_array($email, $allContacts)){
   //   print_r(expression)
   //   $_SESSION['error'] = 'Contact of ' .$fname." " .$lname." " . 'with this email' .' '.$email.' '. 'already exists';
